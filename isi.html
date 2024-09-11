@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kendaraan</title>
+    <link rel="stylesheet" href="hehe.css"> 
+</head>
+<body>
+    <header>
+        <h1>Detail Kendaraan</h1>
+    </header>
+
+    <main>
+        <div class="detail-container">
+            <img id="detail-image" src="" alt="Gambar Kendaraan">
+            <h1 id="detail-name">Nama Kendaraan</h1>
+            <p id="detail-description">Deskripsi Kendaraan</p>
+
+            <h2>Kelebihan</h2>
+            <ul id="detail-pros">
+                <!-- Kelebihan kendaraan akan ditampilkan di sini -->
+            </ul>
+
+            <h2>Kekurangan</h2>
+            <ul id="detail-cons">
+                <!-- Kekurangan kendaraan akan ditampilkan di sini -->
+            </ul>
+
+            <h2>Harga</h2>
+            <p id="detail-price">Rp 0</p>
+
+            <h2>Ulasan</h2>
+            <ul id="detail-reviews">
+                <!-- Ulasan kendaraan akan ditampilkan di sini -->
+            </ul>
+        </div>
+    </main>
+
+
+        <div class="footer-text1">
+            By Sony & Dini
+        </div>
+        <h4><div class="footer-text1"><button type="button" id="recommend-button"><a href="Rekomendasi Mobil.html" style="color: rgb(241, 237, 237);" >Beranda</a></button></div></h4>
+    <script>
+        // Ambil parameter dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const image = urlParams.get('image');
+        const description = urlParams.get('description');
+        const pros = JSON.parse(decodeURIComponent(urlParams.get('pros')));
+        const cons = JSON.parse(decodeURIComponent(urlParams.get('cons')));
+        const price = urlParams.get('price');
+        const reviews = JSON.parse(decodeURIComponent(urlParams.get('reviews')));
+
+        // Isi elemen dengan data kendaraan
+        document.getElementById('detail-name').textContent = name;
+        document.getElementById('detail-image').src = image;
+        document.getElementById('detail-description').textContent = description;
+
+        const prosList = document.getElementById('detail-pros');
+        prosList.innerHTML = pros.map(pro => `<li>${pro}</li>`).join('');
+
+        const consList = document.getElementById('detail-cons');
+        consList.innerHTML = cons.map(con => `<li>${con}</li>`).join('');
+
+        document.getElementById('detail-price').textContent = price;
+
+        const reviewsList = document.getElementById('detail-reviews');
+        reviewsList.innerHTML = reviews.map(review => `<li>${review}</li>`).join('');
+    </script>
+</body>
+</html>

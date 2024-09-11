@@ -1,0 +1,254 @@
+/* Reset dan dasar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+    color: #333;
+}
+
+header {
+    background: #009688;
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+    font-size: 2.2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: headerSlideIn 1s ease-out;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2em;
+}
+
+.container {
+    background: white;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 900px;
+    animation: fadeIn 1s ease-out;
+}
+
+.intro-box {
+    text-align: center;
+    margin-bottom: 2em;
+    opacity: 0;
+    animation: introFadeIn 1s 0.5s forwards;
+}
+
+.intro-box h2 {
+    font-size: 2.2em;
+    margin: 0;
+    color: #00796b;
+}
+
+.intro-box p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+form {
+    margin-bottom: 2em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #444;
+}
+
+select, button {
+    padding: 0.75em;
+    margin: 0.5em 0;
+    width: 100%;
+    border: 2px solid #00796b;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+select {
+    background: #f1f8e9;
+}
+
+button {
+    background: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background: #004d40;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.recommendation-box {
+    margin-top: 1.5em;
+    padding: 1em;
+    background: #e0f2f1;
+    border-radius: 8px;
+    border: 1px solid #b2dfdb;
+    animation: slideIn 0.5s ease-out;
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+    padding: 0.75em;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recommendation-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.recommendation-item img {
+    width: 150px;
+    height: auto;
+    margin-right: 1em;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.recommendation-item img:hover {
+    transform: scale(1.1);
+}
+
+.recommendation-item div {
+    max-width: 600px;
+    display: inline-block; 
+    margin-right: 100px; 
+    text-decoration: none; 
+}
+
+.recommendation-item h3 {
+    margin: 0em;
+    font-size: 1.5em;
+    
+    color: #00796b;
+    display: inline-block; 
+    text-decoration: none; 
+}
+
+.recommendation-item p {
+    display: flex;
+    font-size: 1.1em;
+    color: #00796b;
+}
+
+footer {
+    background: #f9fafa;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 0;
+    padding: 1em;
+    color: #00796b;
+    font-weight: bold;
+}
+
+.footer-text1 {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 0;
+    padding: 0,5em;
+    color: #00796b;
+    font-weight: bold;
+}
+
+.detail-container h4 {
+    color: #f7fcfb;
+}
+
+
+/* Halaman detail kendaraan */
+.detail-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2em;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.detail-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.detail-container h1 {
+    font-size: 2.2em;
+    color: #00796b;
+}
+
+.detail-container p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.detail-container h2 {
+    font-size: 1.8em;
+    color: #00796b;
+}
+
+.detail-container ul {
+    list-style-type: square;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    color: #444;
+}
+
+.detail-container ul li {
+    margin-bottom: 0.5em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes introFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes headerSlideIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
